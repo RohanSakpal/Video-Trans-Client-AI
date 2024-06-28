@@ -1,0 +1,426 @@
+// .body {
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//   //background-color: #f0f4f8;
+//   // margin: 0;
+//   // padding: 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+//   color: #333;
+// }
+
+// header {
+//   width: 100%;
+//   height: 150px;
+//   padding: 10px;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+
+//   button {
+//     padding: 10px 20px;
+//     border-radius: 10px;
+//     outline: none;
+//     background: none;
+//     cursor: pointer;
+//   }
+
+//   .titleHeader{
+//     padding: 0 20px;
+//   }
+// }
+
+// .container {
+//   background-color: #fff;
+//   padding: 0 20px;
+//   border-radius: 12px;
+//   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+//   //max-width: 900px;
+//   width: 100%;
+//   height: calc(100vh - 150px);
+//   display: flex;
+//   // align-items: center;
+// }
+
+// h1 {
+//   font-size: 20px;
+//   margin-bottom: 10px;
+//   color: #333;
+// }
+
+// p {
+//   font-size: 16px;
+//   color: #888;
+//   margin-bottom: 20px;
+
+//   span {
+//     font-weight: bolder;
+//     color: black;
+//   }
+// }
+
+// .video-player {
+//   //background: linear-gradient(135deg, #667eea, #764ba2);
+//   width: 50%;
+//   height: 450px;
+//   border-radius: 12px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 12px;
+//   position: relative;
+//   padding: 10px;
+//   flex-direction: column;
+// }
+
+// .video-player video {
+//   width: 100%;
+//   height: 100%;
+//   padding: 1px;
+//   border: 1px solid black;
+// }
+
+// .play-button {
+//   width: 80px;
+//   height: 80px;
+//   background-color: rgba(255, 255, 255, 0.7);
+//   border-radius: 50%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+// }
+
+// .play-button:hover {
+//   background-color: rgba(255, 255, 255, 0.9);
+// }
+
+// .play-button::before {
+//   content: '';
+//   display: inline-block;
+//   width: 0;
+//   height: 0;
+//   border-left: 24px solid #667eea;
+//   border-top: 16px solid transparent;
+//   border-bottom: 16px solid transparent;
+// }
+
+// .transcript-container {
+//   border-top: 2px solid #e4e7ec;
+//   // padding-top: 10px;
+//   width: 50%;
+//   height: 80%;
+// }
+
+// .transcript-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 10px;
+// }
+
+// .transcript-header h2 {
+//   margin: 0;
+//   font-size: 22px;
+//   color: #667eea;
+// }
+
+// .transcript-search {
+//   display: flex;
+// }
+
+// .transcript-search input {
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 4px 0 0 4px;
+//   outline: none;
+//   width: 200px;
+// }
+
+// .transcript-search button {
+//   padding: 10px 20px;
+//   border: none;
+//   background-color: #667eea;
+//   color: #fff;
+//   border-radius: 0 4px 4px 0;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+// }
+
+// .transcript-search button:hover {
+//   background-color: #5563c1;
+// }
+
+// .transcript-tabs {
+//   display: flex;
+// }
+
+// .tab {
+//   padding: 10px 20px;
+//   border: 1px solid #ccc;
+//   border-bottom: none;
+//   background-color: #f0f4f8;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+// }
+
+// .tab.active {
+//   background-color: #fff;
+//   border-top: 3px solid #667eea;
+//   font-weight: bold;
+// }
+
+// .transcript-content {
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   padding: 15px;
+//   //max-height: 200px;
+//   overflow-y: auto;
+//   background-color: #f9f9f9;
+//   height: 100%;
+// }
+
+// .transcript-item {
+//   display: flex;
+//   align-items: flex-start;
+//   margin-bottom: 10px;
+// }
+
+// .transcript-item input {
+//   margin-right: 10px;
+//   margin-top: 3px;
+// }
+
+// .transcript-item span {
+//   line-height: 1.5;
+// }
+
+// .highlight {
+//   background-color: lightblue;
+// }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .subContainer {
+    display: flex;
+    flex-direction: row;
+    height: 60%;
+
+    .videoPlayer {
+      width: 50%;
+
+      header {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        button {
+          padding: 15px;
+          //border-radius: 5px;
+          //margin-right: 5px;
+          border: 0px;
+          height: 100%;
+          background-color: #085bb3;
+          color: #fff;
+          margin: 0px;
+          //flex: 1;
+          //max-width: 100px;
+          // margin: 5px;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+
+          &:hover{
+            background-color: darken(#085bb3, 10%);
+
+          }
+        }
+
+        .titleHeader{
+          display: flex;
+          flex-direction: column;
+          padding: 5px 15px;
+        }
+
+
+        .titleHeader p {
+          margin: 0;
+          font-size: 14px;
+          color: #888;
+
+          span {
+            font-weight: bolder;
+            color: black;
+          }
+        }
+      }
+
+      main {
+        height: calc(100% - 50px);
+        video {
+          width: 100%;
+          height: 100%;
+          border: 1px solid;
+        }
+      }
+    }
+
+    .transcriptContainer {
+      width: 50%;
+      height: 100%;
+
+      .transcript-tabs {
+        display: flex;
+        height: 50px;
+
+        .tab {
+          padding: 10px 20px;
+          border: 1px solid #ccc;
+          border-bottom: none;
+          background-color: #f0f4f8;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &.active {
+            background-color: #085bb3;
+            border-top: 3px solid #667eea;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+
+      .tab.active {
+        background-color: #fff;
+        border-top: 3px solid #667eea;
+        font-weight: bold;
+      }
+
+      .transcript-content {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 15px;
+        overflow-y: auto;
+        background-color: #f9f9f9;
+        height: calc(100% - 50px);
+
+        .transcript-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 10px;
+
+          input {
+            margin-right: 10px;
+            margin-top: 3px;
+          }
+
+          span {
+            line-height: 1.5;
+            cursor: pointer;
+          }
+        }
+
+        .highlight {
+          background-color: lightblue;
+        }
+      }
+    }
+  }
+
+  .geminiContainer {
+    border: 1px solid;
+    height: 40%;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+
+    .chat-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      height: 75%;
+      overflow: auto;
+
+      .message {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+
+        .avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: #ccc;
+          margin-right: 10px;
+        }
+
+        .user-avatar {
+          background-color: #007bff;
+        }
+
+        .team-avatar {
+          background-color: #ffc107;
+        }
+      }
+    }
+
+    .text {
+      background-color: #e9f5ff;
+      padding: 5px 15px;
+      border-radius: 20px;
+      max-width: 80%;
+      text-wrap: balance;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+
+    .user-message .text {
+      background-color: #e9f5ff;
+    }
+
+    .team-message .text {
+      background-color: #f1f1f1;
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      max-width: 600px;
+      margin: 10px auto;
+      padding: 7px;
+      background-color: #fff;
+      border-radius: 25px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-input input {
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      padding: 10px;
+      border-radius: 25px;
+    }
+
+    .chat-icons {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      button:disabled {
+        cursor: no-drop;
+      }
+    }
+
+    .icon-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}

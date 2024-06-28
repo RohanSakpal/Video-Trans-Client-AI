@@ -1,0 +1,16 @@
+<div class="body">
+    <h1>Video Transcription</h1>
+    <div class="search-container">
+        <input type="text" placeholder="Enter Keyword" [(ngModel)]="keyword" (keyup)="keyupFunc()">
+        <button (click)="onSearch()" [disabled]="keyword == ''">Search</button>
+    </div>
+    <div class="videos-container" *ngIf="videoArr.length > 0">
+        <div class="video" *ngFor="let video of videoArr">
+            <video [src]="video?.video_link" (click)="visitPlayer(video?.v_id)"></video>
+            <div>{{video.videoname}}</div>
+        </div>
+    </div>
+    <div *ngIf="videoArr.length == 0 && isDataNotFound">
+        <h1>Data Not Found</h1>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="body">
+    <div class="container">
+        <div class="video-head">
+            <!-- <div class="video-title"><b>{{video?.title}}</b></div> -->
+            <div class="video-title"><b>Category :</b> {{Category}}</div>
+        </div>
+
+        <div class="video-thumbnail">
+            <video #myVideo controls (timeupdate)="onTimeUpdate()">
+                <source [src]="video?.link" type="video/mp4">
+            </video>
+        </div>
+        <!-- <button (click)="onNextClick()">Next</button> -->
+        <div class="transcription">
+            <p><b>{{videoFrame}}</b></p>
+            <p>{{currentMsg}}</p>
+        </div>
+    </div>
+    <div class="tableContainer" *ngIf="video">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Interval (Min)</th>
+                <th>Person</th>
+                <th>Transcript</th>
+            </tr>
+            <tr *ngFor="let item of video.data;let i = index" (click)="timeForwardBackward(item.start)"
+            [ngClass]="{ 'highlight': isCurrentTimeInRange(item.start, item.end) }">
+                <td>{{i + 1}}</td>
+                <td>{{item.start | timeFormat }} - {{item.end | timeFormat }}</td>
+                <td>{{item.speaker}}</td>
+                <td>{{ item.transcript.length > 25 ? (item.transcript | slice:0:25) + '...' : item.transcript }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
